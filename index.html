@@ -1,71 +1,81 @@
-<!doctype html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>目覚ましアプリ</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <main class="app">
-      <header class="app-header">
-        <h1>目覚まし</h1>
-        <button id="addAlarmButton" class="icon-button" aria-label="アラームを追加">＋</button>
-      </header>
-
-      <section>
-        <ul id="alarmList" class="alarm-list"></ul>
-        <p id="emptyState" class="empty-state">アラームがありません。「＋」で追加してください。</p>
-      </section>
-    </main>
-
-    <dialog id="alarmFormDialog" class="sheet-dialog">
-      <form id="alarmForm" method="dialog" class="sheet-content">
-        <h2 id="formTitle">アラーム作成</h2>
-
-        <label class="field">
-          <span>時刻</span>
-          <input id="timeInput" type="time" required />
-        </label>
-
-        <label class="field">
-          <span>ラベル</span>
-          <input id="labelInput" type="text" maxlength="30" placeholder="例: 学校" />
-        </label>
-
-        <fieldset class="field days-fieldset">
-          <legend>曜日</legend>
-          <div id="daysContainer" class="days-grid"></div>
-        </fieldset>
-
-        <label class="field">
-          <span>音</span>
-          <select id="soundSelect"></select>
-        </label>
-
-        <label class="toggle-row">
-          <span>有効</span>
-          <input id="enabledInput" type="checkbox" checked />
-        </label>
-
-        <menu class="button-row">
-          <button type="button" id="cancelButton" class="secondary">キャンセル</button>
-          <button type="button" id="deleteButton" class="danger hidden">削除</button>
-          <button type="submit" class="primary">保存</button>
-        </menu>
-      </form>
-    </dialog>
-
-    <section id="ringOverlay" class="ring-overlay hidden" aria-live="assertive">
-      <div class="ring-card">
-        <p id="ringTime" class="ring-time"></p>
-        <p id="ringLabel" class="ring-label"></p>
-        <button id="stopAlarmButton" class="stop-button">停止</button>
-      </div>
-    </section>
-
-    <button id="unlockAudioButton" class="unlock-audio">音声を有効化</button>
-
-    <script src="app.js" defer></script>
-  </body>
-</html>
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000000000000000000000000000000000000..ae68c7e0bd66d3a19bac9cabe2f5d893a79d1566
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,71 @@
++<!doctype html>
++<html lang="ja">
++  <head>
++    <meta charset="UTF-8" />
++    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
++    <title>目覚ましアプリ</title>
++    <link rel="stylesheet" href="styles.css" />
++  </head>
++  <body>
++    <main class="app">
++      <header class="app-header">
++        <h1>目覚まし</h1>
++        <button id="addAlarmButton" class="icon-button" aria-label="アラームを追加">＋</button>
++      </header>
++
++      <section>
++        <ul id="alarmList" class="alarm-list"></ul>
++        <p id="emptyState" class="empty-state">アラームがありません。「＋」で追加してください。</p>
++      </section>
++    </main>
++
++    <dialog id="alarmFormDialog" class="sheet-dialog">
++      <form id="alarmForm" method="dialog" class="sheet-content">
++        <h2 id="formTitle">アラーム作成</h2>
++
++        <label class="field">
++          <span>時刻</span>
++          <input id="timeInput" type="time" required />
++        </label>
++
++        <label class="field">
++          <span>ラベル</span>
++          <input id="labelInput" type="text" maxlength="30" placeholder="例: 学校" />
++        </label>
++
++        <fieldset class="field days-fieldset">
++          <legend>曜日</legend>
++          <div id="daysContainer" class="days-grid"></div>
++        </fieldset>
++
++        <label class="field">
++          <span>音</span>
++          <select id="soundSelect"></select>
++        </label>
++
++        <label class="toggle-row">
++          <span>有効</span>
++          <input id="enabledInput" type="checkbox" checked />
++        </label>
++
++        <menu class="button-row">
++          <button type="button" id="cancelButton" class="secondary">キャンセル</button>
++          <button type="button" id="deleteButton" class="danger hidden">削除</button>
++          <button type="submit" class="primary">保存</button>
++        </menu>
++      </form>
++    </dialog>
++
++    <section id="ringOverlay" class="ring-overlay hidden" aria-live="assertive">
++      <div class="ring-card">
++        <p id="ringTime" class="ring-time"></p>
++        <p id="ringLabel" class="ring-label"></p>
++        <button id="stopAlarmButton" class="stop-button">停止</button>
++      </div>
++    </section>
++
++    <button id="unlockAudioButton" class="unlock-audio">音声を有効化</button>
++
++    <script src="app.js" defer></script>
++  </body>
++</html>
+ 
+EOF
+)
