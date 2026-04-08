@@ -1,0 +1,221 @@
+:root {
+  color-scheme: light dark;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #111;
+  color: #f5f5f5;
+}
+
+.app {
+  padding: 16px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+.icon-button,
+.stop-button,
+.primary,
+.secondary,
+.danger,
+.unlock-audio {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 1rem;
+}
+
+.icon-button {
+  font-size: 1.4rem;
+  width: 48px;
+  height: 48px;
+  background: #2f7cf6;
+  color: #fff;
+}
+
+.alarm-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.alarm-item {
+  background: #1b1b1b;
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+.alarm-main {
+  border: none;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  width: 100%;
+}
+
+.alarm-time {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.alarm-meta {
+  color: #b7b7b7;
+  font-size: 0.9rem;
+}
+
+.empty-state {
+  color: #a8a8a8;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.sheet-dialog {
+  border: none;
+  border-radius: 14px;
+  width: min(92vw, 480px);
+  padding: 0;
+}
+
+.sheet-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.sheet-content {
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #555;
+  font-size: 1rem;
+}
+
+.days-fieldset {
+  border: 1px solid #666;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.day-chip {
+  display: grid;
+  place-items: center;
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 6px;
+  font-size: 0.85rem;
+}
+
+.toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-row {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 0;
+}
+
+.primary {
+  background: #2f7cf6;
+  color: #fff;
+}
+
+.secondary {
+  background: #666;
+  color: #fff;
+}
+
+.danger {
+  background: #b23333;
+  color: #fff;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.ring-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.ring-card {
+  background: #fff;
+  color: #111;
+  border-radius: 16px;
+  width: min(92vw, 420px);
+  padding: 20px;
+  text-align: center;
+}
+
+.ring-time {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.ring-label {
+  margin: 10px 0 20px;
+  font-size: 1.2rem;
+}
+
+.stop-button {
+  width: 100%;
+  background: #b23333;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.unlock-audio {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background: #2f7cf6;
+  color: #fff;
+}
